@@ -15,6 +15,7 @@ menuToggleBtn.addEventListener('click', function () {
     }
 });
 
+// 2차메뉴 열렸다 닫혔다
 $(document).ready(function () {
     $("#gnb-mo ul.subMenu").hide();
     $("#gnb-mo ul.mainMenu li").click(function () {
