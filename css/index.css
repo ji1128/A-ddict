@@ -5,6 +5,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 /* font-family: 'Noto Sans KR', sans-serif; */
 
+/* ---------------------------------------- */
+/* scroll-spy */
+.back-to-position{
+    opacity: 0;
+    transition: 1s;
+}
+.back-to-position.to-up{
+    /* 아래에서 위로 등장하게 */
+    transform: translateY(30px);
+}
+.back-to-position.to-fast-up{
+    /* 아래에서 위로 등장하게 */
+    transform: translateY(200px);
+}
+.show .back-to-position{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.back-to-position.to-right{
+    /* to-right => 왼쪽에서 부터 등장하니까 (마이너스) -150px */
+    transform: translateX(-150px);
+    /* 좌우로만 움직이기 때문에 translateX로 설정 */
+}
+.back-to-position.to-left{
+    transform: translateX(150px);
+}
+
+
+/* 시간차 등장 모션 제작 */
+.show .back-to-position.delay-0{transition-delay: 0s;}
+.show .back-to-position.delay-1{transition-delay: 0.3s;}
+.show .back-to-position.delay-2{transition-delay: 0.6s;}
+.show .back-to-position.delay-3{transition-delay: 0.9s;}
+
+
 /* =============common============= */
 body{
     color: #333;
@@ -21,8 +57,6 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    
-   
 }
 img{display: block;}
 .hidden{display: none;}
@@ -199,6 +233,7 @@ header .shopping-icon .material-icons{
     top: 150px;
     left: 40px;
 }
+#gnb-mo .mainMenu .item{position: relative;}
 #gnb-mo .mainMenu .item:first-child{
     /* 메뉴 SHOP 하단 선 */
     border-bottom: 1px solid #ccc;
@@ -208,10 +243,12 @@ header .shopping-icon .material-icons{
 }
 #gnb-mo .mainMenu .subMenu{
     /* 2차메뉴 */
-    transition: max-height 0.7s; /* 부드럽게 최대 높이로 커지는 효과*/
-    max-height: 0;
+    /* transition: max-height 0.7s; */
+    /* 부드럽게 최대 높이로 커지는 효과*/
+    /* max-height: 0; */
     z-index: 199;
 }
+#gnb-mo .mainMenu .subMenu
 /* 가상선택자 :target -> 클릭하면 서브메뉴 보여짐 */
 #gnb-mo .mainMenu .item:target .subMenu{
     max-height: 250px; /*높이 변경 지점*/
