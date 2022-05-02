@@ -242,17 +242,7 @@ header .shopping-icon .material-icons{
     margin-bottom: 5px;
 }
 #gnb-mo .mainMenu .subMenu{
-    /* 2차메뉴 */
-    /* transition: max-height 0.7s; */
-    /* 부드럽게 최대 높이로 커지는 효과*/
-    /* max-height: 0; */
     z-index: 199;
-}
-#gnb-mo .mainMenu .subMenu
-/* 가상선택자 :target -> 클릭하면 서브메뉴 보여짐 */
-#gnb-mo .mainMenu .item:target .subMenu{
-    max-height: 250px; /*높이 변경 지점*/
-    /* 260px이 넘어가지 않도록 함-> 서브메뉴중 가장 긴 메뉴 기준으로 넣어줌 */
 }
 /* 메뉴 a */
 #gnb-mo .mainMenu .item > a{
