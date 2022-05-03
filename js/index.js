@@ -15,6 +15,14 @@ menuToggleBtn.addEventListener('click', function () {
     }
 });
 
+// 2차메뉴 열렸다 닫혔다.
+$(document).ready(function () {
+    $("#gnb-mo ul.subMenu").hide();
+    $("#gnb-mo ul.mainMenu li").click(function () {
+        $("ul", this).slideToggle("fast");
+    });
+});
+
 //MAIN SLIDER
 new Swiper('.main-slider .swiper', {
     // Optional parameters
@@ -39,10 +47,10 @@ new Swiper('.best-item .swiper', {
         prevEl: ".best-item .swiper-prev",
         nextEl: ".best-item .swiper-next"
     },
-    pagination : { // 페이징 설정
-		el : '.swiper-pagination',
-		clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-	},
+    pagination: { // 페이징 설정
+        el: '.swiper-pagination',
+        clickable: true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+    },
     breakpoints: { //반응형 조건 속성
         320: { //320이상인 경우
             slidesPerView: 2, //레이아웃 1열
@@ -73,10 +81,17 @@ new Swiper('.changes-time .swiper', {
 });
 
 
-
-
-
-
-
-
-
+// skroll-spy -----------------------------
+//Masgic Scroll---------------------
+const spyEls = document.querySelectorAll("section.scroll-spy");
+//forEach -> 배열함수
+spyEls.forEach(function (spyEl) {
+    new ScrollMagic.Scene({
+            triggerElement: spyEl, //보여질 부분 감지할 요소 지정
+            triggerHook: 0.8, //0.8초 동안 훅이 실행됨
+        })
+        //토글 할 요소 생성 및 제거
+        //.setClassToggle(토글 할 요소, "넣었다 뺐다 할 class 이름 생성")
+        .setClassToggle(spyEl, "show")
+        .addTo(new ScrollMagic.Controller());
+});
