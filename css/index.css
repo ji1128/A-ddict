@@ -23,7 +23,6 @@
     opacity: 1;
     transform: translate(0);
 }
-
 .back-to-position.to-right{
     /* to-right => 왼쪽에서 부터 등장하니까 (마이너스) -150px */
     transform: translateX(-150px);
@@ -32,7 +31,6 @@
 .back-to-position.to-left{
     transform: translateX(150px);
 }
-
 
 /* 시간차 등장 모션 제작 */
 .show .back-to-position.delay-0{transition-delay: 0s;}
